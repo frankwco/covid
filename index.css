@@ -1,29 +1,30 @@
+:root {
+    --main-label-color: #1b1b1b;
+}
+
 * {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+}
+
 h1, h2, h3 {
-    color: #242424;
+    color: var(--main-label-color);
 }
 
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 1000px 1fr;
- 
-}
-
-.wrapper>main {
-    display: grid;
-    grid-template-rows: minmax(50px, auto);
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .main {
     display: grid;
     grid-template-rows: minmax(50px, auto);
-    padding-left: 20px;
+    padding: 0px 20px;
+    background-color: #fff;
 }
 
 .main>h1 {
@@ -36,14 +37,19 @@ h1, h2, h3 {
 }
 
 .graphic-article {
-    
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, .1);
-    border-radius: 30px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+    border-radius: 20px;
     padding: 20px;
+    justify-content: center;
+    text-align: center;
 }
 
 .graphic-article>h3 {
     margin-top: 0;
+    background-color: #c0c0c0;
+    padding: 10px 0px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .2);
 }
 
 .graphic-article>img {
