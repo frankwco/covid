@@ -1,41 +1,178 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="index.css">
-    <title>Observatorio Covid</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="index.css">
+	<title>Observatorio Covid</title>
+
+	<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+	<script type="text/javascript">
+		function fadeIn(e, fadeTimeOut) {
+			$(e).animate({
+				'opacity': '1',
+				'padding-top': '0',
+			}, fadeTimeOut);
+		}
+		
+		$(window).ready(() => {
+			$('.on-render-fade-in').each(function () {
+				fadeIn(this, 500);
+			});
+		})
+
+		 $(window).scroll(() => {
+			$('.scroll-fade-in').each(function () {
+				const BOTTOM_OF_OBJECT = $(this).offset().top + ($(this).outerHeight() / 4);
+				const BOTTOM_OF_WINDOW = $(window).scrollTop() + $(window).height();
+
+				if (BOTTOM_OF_WINDOW > BOTTOM_OF_OBJECT) {
+					fadeIn(this, 1000);
+				}
+			});
+		});
+	</script>
 </head>
 
 <body>
-    <div id="wrapper" class="wrapper">
-        <div></div>
-        
-        <main id="main" class="main">
-            <h1 id="mainLabel">Observatório Covid-19</h1>
+	<div id="wrapper" class="wrapper">
+		<header id="header" class="header">
+			<h1 id="headerLabel" class="on-render-fade-in">Observatório Covid-19</h1>
+		</header>
 
-            <section id="paranavaiSection">
-                <h2>Paranavaí</h2>
+		<main id="main" class="main">
+			<div></div>
+			<div>
+				<section id="paranavaiSection">
+					<h2 class="on-render-fade-in">Paranavaí</h2>
 
-                <article class="graphic-article">
-                    <h3>
-                        Número de casos de Covid-19 por faixa etária entre
-                        01 de fevereiro e 28 de maio de 2021 (quinzenal)
-                    </h3>
+					<figure class="graphic-figure on-render-fade-in">
+						<div class="graphic-title-content">
+							<h3>
+								Média de casos de Covid-19 de 01 de fevereiro de 2021 a 1 de junho de 2021 (quinzenal)
+							</h3>
+						</div>
+					
+						<div class="graphic-content">
+							<img src="graphics/g_c_01-Fevereiro_a_01-Junho_paranavai_picdt=2021-06-05.png"
+								title="Média de casos de Covid-19 de 01 de fevereiro de 2021 a 1 de junho de 2021 (quinzenal)"
+								alt="Gráfico de linhas que exibe a média de casos de Covid-19 de 01 de fevereiro de 2021 a 1 de junho de 2021 quinzenalmente">
+					
+							<span>
+								<strong>* As datas no eixo-x referem-se ao início da quinzena</strong>
+							</span>
+						</div>
+					</figure>
 
-                    <img src="graphics/g_fe_01-Fevereiro_a_28-Maio_paranavai_picdt=2021-06-02.png">
+					<figure class="graphic-figure scroll-fade-in">
+						<div class="graphic-title-content">
+							<h3>
+								Média de óbitos de Covid-19 de 01 de fevereiro de 2021 a 1 de junho de 2021 (quinzenal)
+							</h3>
+						</div>
+					
+						<div class="graphic-content">
+							<img src="graphics/g_m_ob_01-Fevereiro_a_01-Junho_paranavai_picdt=2021-06-05.png"
+								title="Média de óbitos de Covid-19 de 01 de fevereiro de 2021 a 1 de junho de 2021 (quinzenal)"
+								alt="Gráfico de linhas que exibe a média de óbitos de Covid-19 de 01 de fevereiro de 2021 a 1 de junho de 2021 quinzenalmente">
+					
+							<span>
+								<strong>* As datas no eixo-x referem-se ao início da quinzena</strong>
+							</span>
+						</div>
+					</figure>
 
-                    <span>
-                        <strong>*</strong> As datas no eixo-x referem-se ao início da quinzena
-                    </span>
-                </article>
-            </section>
-        </main>
-        
-        <div></div>
-    </div>
+
+					<figure class="graphic-figure scroll-fade-in">
+						<div class="graphic-title-content">
+							<h3>
+								Média de casos de Covid-19 por faixa etária de 01 de fevereiro de 2021 a 1 de junho de 2021 (quinzenal)
+							</h3>
+						</div>
+						
+						<div class="graphic-content">
+							<img src="graphics/g_fe_01-Fevereiro_a_01-Junho_paranavai.png"
+								title="Média de casos de Covid-19 por faixa etária de 01 de fevereiro de 2021 a 1 de junho de 2021 (quinzenal)"
+								alt="Gráfico de linhas que exibe a média de casos de Covid-19 por faixa etária de 01 de fevereiro de 2021 a 1 de junho de 2021 quinzenalmente">
+							
+							<span>
+								<strong>* As datas no eixo-x referem-se ao início da quinzena</strong>
+							</span>
+						</div>
+					</figure>
+
+					<figure class="graphic-figure scroll-fade-in">
+						<div class="graphic-title-content">
+							<h3>
+								Média de óbitos de Covid-19 por faixa etária de 01 de fevereiro de 2021 a 1 de junho de 2021 (quinzenal)
+							</h3>
+						</div>
+					
+						<div class="graphic-content">
+							<img src="graphics/g_fe_ob_01-Fevereiro_a_01-Junho_paranavai.png"
+								title="Média de óbitos de Covid-19 por faixa etária de 01 de fevereiro de 2021 a 1 de junho de 2021 (quinzenal)"
+								alt="Gráfico de linhas que exibe a média de óbitos de Covid-19 por faixa etária de 01 de fevereiro de 2021 a 1 de junho de 2021 quinzenalmente">
+					
+							<span>
+								<strong>* As datas no eixo-x referem-se ao início da quinzena</strong>
+							</span>
+						</div>
+					</figure>
+				</section>
+			</div>
+			<div></div>
+		</main>
+
+		<footer id="footer" class="footer">
+			<section class="project-members-section scroll-fade-in">
+				<h3>Projeto Perseus</h3>
+				<div>
+					<div class="project-members-section-column"
+						title="Titulação dos extensionistas">
+						<span>Cordenador Prof. Dr.</span>
+						<span>Prof. Dra.</span>
+						<span>Prof. Me.</span>
+						<span>Prof. Dra.</span>
+						<span>Prof. Dr.</span>
+						<span>Discente Eng. de Software</span>
+						<span>Discente Eng. de Software</span>
+						<span>Discente Eng. de Software</span>
+					</div>
+					<div class="project-members-section-column"
+						title="Nomes dos extensionistas">
+						<span class="green-emphasis">Eduardo H. M. da Cruz</span>
+						<span class="green-emphasis">Daniela E. Flôr</span>
+						<span class="green-emphasis">Frank W. C. de Oliveira</span>
+						<span class="green-emphasis">Camila L. Clozato</span>
+						<span class="green-emphasis">João M. B. de S. Maciel</span>
+						<span class="green-emphasis">Henrique G. de Oliveira</span>
+						<span class="green-emphasis">Angélica S. Mizutani</span>
+						<span class="green-emphasis">Flavio L. Fernandes</span>
+					</div>
+					<div class="project-members-section-column"
+						title="E-mails de contato dos extensionistas">
+						<span>eduardo.cruz@ifpr.edu.br</span>
+						<span>daniela.flor@ifpr.edu.br</span>
+						<span>frank.willian@ifpr.edu.br</span>
+						<span>camila.lara@ifpr.edu.br</span>
+						<span>joao.maciel@ifpr.edu.br</span>
+						<span>henriquegon.o@hotmail.com</span>
+						<span>angelicamizutani@gmail.com</span>
+						<span>flaviolukfer@gmail.com</span>
+					</div>
+				</div>
+			</section>
+
+			<figure class="scroll-fade-in">
+				<img src="./images/ifpr-logo.png"
+					title="Logotipo Instituto Federal do Paraná - Campus Paranavaí"
+					alt="Imagem do logotipo do Instituto Federal do Paraná - Campus Paranavaí">
+			</figure>
+		</footer>
+	</div>
 </body>
 
 </html>

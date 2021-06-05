@@ -1,5 +1,6 @@
 :root {
     --main-label-color: #1b1b1b;
+    --main-background-color: #00b94d;
 }
 
 * {
@@ -15,44 +16,106 @@ h1, h2, h3 {
     color: var(--main-label-color);
 }
 
+.on-render-fade-in, .scroll-fade-in {
+    opacity: 0;
+    padding-top: 20px;
+}
+
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 1000px 1fr;
+    grid-template-rows: minmax(200px, auto) auto minmax(200px, auto);
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--main-background-color);
+}
+
+.header>h1 {
+    text-align: center;
+    font-size: 70px;
+    border-bottom: 5px solid #fff;
 }
 
 .main {
     display: grid;
-    grid-template-rows: minmax(50px, auto);
-    padding: 0px 20px;
+    grid-template-columns: 1fr 1000px 1fr;
     background-color: #fff;
+    padding: 0 50px 50px 50px;
 }
 
-.main>h1 {
-    text-align: center;
-    font-size: 50px;
+section>h2 {
+    font-size: 40px;
 }
 
-.main>section>h2 {
-    font-size: 30px;
+.graphic-figure {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin: 0;
+    margin-top: 50px;
 }
 
-.graphic-article {
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
-    border-radius: 20px;
-    padding: 20px;
-    justify-content: center;
-    text-align: center;
-}
-
-.graphic-article>h3 {
+.graphic-figure:first-child {
     margin-top: 0;
-    background-color: #c0c0c0;
-    padding: 10px 0px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, .2);
 }
 
-.graphic-article>img {
+.graphic-title-content>h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 21px;
+    background-color: rgba(128, 128, 128, .1);
+    border-bottom: 5px solid var(--main-background-color);
+    padding: 10px 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.graphic-content {
+    border: 2px solid var(--main-background-color);
+    padding: 5px;
+    border-radius: 0 0 10px 10px;
+}
+
+.graphic-content>img {
+    margin: 10px 0;
     width: 100%;
 }
 
+.footer {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    padding: 10px;
+    padding-right: 0;
+    background-color: #585858;
+    align-items: center;
+}
+
+.footer>figure>img {
+    width: 100%;
+}
+
+.project-members-section>div {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    color: #000;
+}
+
+.project-members-section>h3 {
+    color: #fff;
+    font-size: 20px;
+    padding-bottom: 10px;
+    border-bottom: 5px solid var(--main-background-color);
+    width: 160px;
+}
+
+.project-members-section-column>span {
+    display: block;
+    padding: 5px 0px;
+    font-weight: bold;
+}
+
+.green-emphasis {
+    color: #fff;
+}
